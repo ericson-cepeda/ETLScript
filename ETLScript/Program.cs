@@ -28,7 +28,7 @@ namespace ETLScript
                 FacebookPost.RootObject post = new FacebookPost.RootObject();
                 post = serializer.Deserialize<FacebookPost.RootObject>(jsonPost);
                 
-                FacebookPost.From elemento = null;
+                
                 
                 //cnnmafabd03gc.Open();
                 //int rta = validarAfiliacionAsofondos(valor, valor, cnnmafabd03gc);
@@ -44,7 +44,7 @@ namespace ETLScript
         /// <summary>
         /// valida si un cotizante esta afiliado a asofondos y retorna el código de estado de la administradora si lo está  o retorna cero si no lo está
         /// </summary>
-        public static int validarAfiliacionAsofondos(FacebookPost post, string no_id, SqlConnection cn)
+        public static int validarAfiliacionAsofondos(FacebookPost.RootObject post, string no_id, SqlConnection cn)
         {
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter da = new SqlDataAdapter();
